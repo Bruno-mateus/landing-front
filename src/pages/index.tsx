@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import Image from "next/image";
+import logo from "../assets/logo.svg";
+import { Header } from "@/styles/Home/Home";
+import { ButtonLink } from "@/components/buttons/ButtonLink/ButtonLink";
 
 export default function Home() {
   return (
@@ -10,6 +13,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header>
+        <Image src={logo} width={135} height={40} alt={"OUSS"} />
+        <ButtonLink>O que é a OUSS ?</ButtonLink>
+      </Header>
       <h1>Hello world</h1>
     </>
   );
