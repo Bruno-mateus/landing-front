@@ -5,8 +5,12 @@ import uOrange from "../../assets/ü-orange.svg";
 import { styled } from "@/styles";
 
 export const Container = styled("div", {
-  height: "100%",
+  height: "18.75rem",
   borderRadius: 12,
+  "@media (max-width:500px)": {
+    borderRadius: 3.24,
+    height: "80.92px",
+  },
   variants: {
     backgrounds: {
       blue: {

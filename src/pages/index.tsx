@@ -2,13 +2,18 @@ import Head from 'next/head'
 import Image from "next/image";
 
 import logo from "../assets/logo.svg";
+import usersIcon from "../assets/users-icon.svg";
+import heartIcon from "../assets/heart-icon.svg";
+import messageIcon from "../assets/message-icon.svg";
 
 import {
   AboutContainer,
   Container,
   ContainerCards,
+  Footer,
   Header,
   MainContent,
+  SocialBox,
   StepCard,
   StepsWork,
 } from "@/styles/Home/Home";
@@ -30,7 +35,9 @@ export default function Home() {
       </Head>
       <Header>
         <Image src={logo} width={135} height={40} alt={"OUSS"} />
-        <ButtonLink>O que é a OUSS ?</ButtonLink>
+        <ButtonLink href={"#about"} scroll>
+          O que é a OUSS ?
+        </ButtonLink>
       </Header>
       <Container>
         <MainContent>
@@ -55,10 +62,10 @@ export default function Home() {
             <Card color="green" />
             <Card color="orange" />
           </ContainerCards>
-          <Button>Entrar na lista de espera</Button>
+          <Button type="button">Entrar na lista de espera</Button>
         </MainContent>
         <Separator />
-        <AboutContainer>
+        <AboutContainer id="about">
           <HighLight size="medium">
             <h2>Conheça a OUSS</h2>
             <p>
@@ -68,6 +75,10 @@ export default function Home() {
           </HighLight>
           <StepsWork>
             <StepCard>
+              <span>
+                {" "}
+                <Image src={heartIcon} alt="dois corações" />
+              </span>
               <HighLight size="small">
                 <strong>Inclusão e diversidade</strong>
                 <p>
@@ -77,6 +88,10 @@ export default function Home() {
               </HighLight>
             </StepCard>
             <StepCard>
+              <span>
+                {" "}
+                <Image src={usersIcon} alt="uma pessoa" />
+              </span>
               <HighLight size="small">
                 <strong>Processo humanizado</strong>
                 <p>
@@ -86,6 +101,9 @@ export default function Home() {
               </HighLight>
             </StepCard>
             <StepCard>
+              <span>
+                <Image src={messageIcon} alt="um simbolo de mensagem" />
+              </span>
               <HighLight size="small">
                 <strong>Retorno dos processos</strong>
                 <p>
@@ -95,7 +113,21 @@ export default function Home() {
               </HighLight>
             </StepCard>
           </StepsWork>
+          <SocialBox>
+            <p>Fica de olho no nosso LinkedIn pra acompanhar as novidades</p>
+            <ButtonLink
+              href="https://www.linkedin.com/company/ousscompany"
+              target="_blank"
+            >
+              Seguir a Ouss
+            </ButtonLink>
+          </SocialBox>
         </AboutContainer>
+        <Separator />
+        <Footer>
+          <span>Ouss © 2023 - Todos os direitos reservados</span>
+          <span>Política de privacidade</span>
+        </Footer>
       </Container>
     </>
   );

@@ -14,4 +14,9 @@ export const ButtonContainer = styled("button", {
   fontWeight: 700,
   color: "$white",
   fontSize: "1.25rem",
+  "@media (max-width:500px)": {
+    padding: "1rem 0",
+    width: "100%",
+    fontSize: "1rem",
+  },
 });

@@ -7,6 +7,7 @@ export const ButtonLinkContainer = styled(Link, {
   padding: "12px 24px",
   borderRadius: 8,
   textDecoration: "none",
-  color: "white",
+  color: "$white",
   fontWeight: 700,
+  width: "fit-content",
 });

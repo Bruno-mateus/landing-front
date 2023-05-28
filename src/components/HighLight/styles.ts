@@ -6,6 +6,7 @@ export const HighLightContainer = styled("div", {
   flexDirection: "column",
   margin: "auto",
   TextAlign: "center",
+  alignItems: "center",
   variants: {
     sizes: {
       large: {
@@ -16,6 +17,10 @@ export const HighLightContainer = styled("div", {
           fontSize: "4rem",
           lineHeight: "5.2rem",
           fontWeight: 700,
+          "@media (max-width:500px)": {
+            fontSize: "1.75rem",
+            lineHeight: "2.25rem",
+          },
           span: {
             display: "inline-flex",
             flexDirection: "column",
@@ -24,20 +29,35 @@ export const HighLightContainer = styled("div", {
               height: 3,
               backgroundColor: "$orange700",
               borderRadius: "8px",
+              "@media (max-width:500px)": {
+                display: "none",
+              },
             },
           },
+        },
+        "@media (max-width:500px)": {
+          padding: "0 1.25rem",
+          width: "100%",
+          gap: "1rem",
+          fontSize: ".875rem",
         },
       },
       medium: {
         fontSize: "1.125rem",
         gap: "1rem",
+        h2: {
+          fontSize: "3rem",
+          "@media (max-width:500px)": {
+            fontSize: "1.75rem",
+          },
+        },
         p: {
           maxWidth: 545,
           lineHeight: "1.6875rem",
           margin: "auto",
-        },
-        h2: {
-          fontSize: "3rem",
+          "@media (max-width:500px)": {
+            fontSize: "0.875rem",
+          },
         },
       },
       small: {

@@ -1,6 +1,6 @@
 import { ButtonProps } from "@/types/buttonProps";
 import { ButtonContainer } from "./styles";
 
-export function Button({ children, type }: ButtonProps) {
-  return <ButtonContainer type={type}> {children}</ButtonContainer>;
+export function Button({ children }: ButtonProps) {
+  return <ButtonContainer> {children}</ButtonContainer>;
 }

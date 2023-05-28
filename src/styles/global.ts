@@ -16,8 +16,12 @@ export const globalStyles = globalCss({
     background: "$gray950",
     fontFamily: "var(--font-red-hat-display)",
     color: "$gray600",
+    scrollBehavior: "smooth",
 
     height: "100%",
+    "@media (max-width:500px)": {
+      fontSize: "0.875rem",
+    },
   },
 
   main: {

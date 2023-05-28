@@ -1,6 +1,10 @@
+import { ButtonLinkProps } from "@/types/buttonProps";
 import { ButtonLinkContainer } from "./styles";
-import { ButtonProps } from "@/types/buttonProps";
 
-export function ButtonLink({ children }: ButtonProps) {
-  return <ButtonLinkContainer href={""}>{children}</ButtonLinkContainer>;
+export function ButtonLink({ children, target, ...rest }: ButtonLinkProps) {
+  return (
+    <ButtonLinkContainer {...rest} target={target}>
+      {children}
+    </ButtonLinkContainer>
+  );
 }
