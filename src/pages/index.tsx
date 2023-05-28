@@ -1,8 +1,23 @@
 import Head from 'next/head'
 import Image from "next/image";
+
 import logo from "../assets/logo.svg";
-import { Header } from "@/styles/Home/Home";
+
+import {
+  AboutContainer,
+  Container,
+  ContainerCards,
+  Header,
+  MainContent,
+  StepCard,
+  StepsWork,
+} from "@/styles/Home/Home";
+
 import { ButtonLink } from "@/components/buttons/ButtonLink/ButtonLink";
+import { Card } from "@/components/cards/Card";
+import { Button } from "@/components/buttons/Button/Button";
+import { Separator } from "@/components/Separator/Separator";
+import { HighLight } from "@/components/HighLight/HighLight";
 
 export default function Home() {
   return (
@@ -17,7 +32,71 @@ export default function Home() {
         <Image src={logo} width={135} height={40} alt={"OUSS"} />
         <ButtonLink>O que é a OUSS ?</ButtonLink>
       </Header>
-      <h1>Hello world</h1>
+      <Container>
+        <MainContent>
+          {" "}
+          <HighLight size="large">
+            <h1>
+              Tá afim de testar uma{" "}
+              <span>
+                nova forma
+                <span />
+              </span>{" "}
+              de se aplicar em vagas?
+            </h1>
+            <p>
+              É só entrar na lista de espera pra trocar uma ideia com a gente e
+              testar a plataforma antes do lançamento
+            </p>
+          </HighLight>
+          <ContainerCards>
+            <Card color="pink" />
+            <Card color="blue" />
+            <Card color="green" />
+            <Card color="orange" />
+          </ContainerCards>
+          <Button>Entrar na lista de espera</Button>
+        </MainContent>
+        <Separator />
+        <AboutContainer>
+          <HighLight size="medium">
+            <h2>Conheça a OUSS</h2>
+            <p>
+              A plataforma feita por quem também já cansou de entrar em
+              processos seletivos e não dar em nada.
+            </p>
+          </HighLight>
+          <StepsWork>
+            <StepCard>
+              <HighLight size="small">
+                <strong>Inclusão e diversidade</strong>
+                <p>
+                  Representatividade é coisa séria. A nossa comunidade acredita
+                  que não existe padrão pra talentos únicos.
+                </p>
+              </HighLight>
+            </StepCard>
+            <StepCard>
+              <HighLight size="small">
+                <strong>Processo humanizado</strong>
+                <p>
+                  A gente já cansou de ser refém de algoritmo. Tecnologia é pra
+                  ser usada a nosso favor.
+                </p>
+              </HighLight>
+            </StepCard>
+            <StepCard>
+              <HighLight size="small">
+                <strong>Retorno dos processos</strong>
+                <p>
+                  Sistema de feedback que realmente funciona. Transparência é o
+                  foco em todas as etapas do processo.
+                </p>
+              </HighLight>
+            </StepCard>
+          </StepsWork>
+        </AboutContainer>
+      </Container>
     </>
   );
 }

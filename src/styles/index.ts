@@ -21,6 +21,7 @@ export const {
       gray600: "#92959C",
       gray700: "#767A8F",
       orange700: "#F5562B",
+      orange300: "#F56E4A",
     },
   },
 });

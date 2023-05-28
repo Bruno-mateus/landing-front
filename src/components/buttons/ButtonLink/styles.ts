@@ -1,4 +1,4 @@
-import { styled } from "@stitches/react";
+import { styled } from "@/styles";
 import Link from "next/link";
 
 export const ButtonLinkContainer = styled(Link, {

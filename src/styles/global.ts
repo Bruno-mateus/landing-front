@@ -6,19 +6,26 @@ export const globalStyles = globalCss({
     margin: 0,
     boxSizing: "border-box",
   },
-  "html, body": {
-    width: "100vw",
+  html: {
     height: "100vh",
+    scrollBehavior: "smooth",
   },
   body: {
     "-webkit-font-smoothing": "antialiased",
-    scrollBehavior: "smooth",
+    fontSize: "1.125rem",
     background: "$gray950",
     fontFamily: "var(--font-red-hat-display)",
-    color: "$white",
-  },
-  "#_next": {
-    width: "100%",
+    color: "$gray600",
+
     height: "100%",
+  },
+
+  main: {
+    height: "100%",
+    width: "100%",
+  },
+
+  "h1,h2,h3,h4,h5,h6, strong": {
+    color: "$white",
   },
 });
