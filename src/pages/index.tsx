@@ -20,11 +20,15 @@ import {
 
 import { ButtonLink } from "@/components/buttons/ButtonLink/ButtonLink";
 import { Card } from "@/components/cards/Card";
-import { Button } from "@/components/buttons/Button/Button";
+
 import { Separator } from "@/components/Separator/Separator";
 import { HighLight } from "@/components/HighLight/HighLight";
+import { Form } from '@/components/Form/Form';
+import { useState } from 'react';
+import { Button } from '@/components/buttons/Button/Button';
 
 export default function Home() {
+  const [activeForm, setActiveForm]=useState(false)
   return (
     <>
       <Head>
@@ -33,11 +37,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {
+        activeForm?<Form setActiveForm={setActiveForm}/>:""
+      }
+      
       <Header>
         <Image src={logo} width={135} height={40} alt={"OUSS"} />
-        <ButtonLink href={"#about"} scroll>
+        <a href="#about" >
           O que é a OUSS ?
-        </ButtonLink>
+        </a>
       </Header>
       <Container>
         <MainContent>
@@ -62,7 +70,7 @@ export default function Home() {
             <Card color="green" />
             <Card color="orange" />
           </ContainerCards>
-          <Button type="button">Entrar na lista de espera</Button>
+          <Button type="button" onClick={()=>setActiveForm(true)}>Entrar na lista de espera</Button>
         </MainContent>
         <Separator />
         <AboutContainer id="about">

@@ -1,6 +1,6 @@
 import { styled } from "@/styles";
 
-export const ButtonContainer = styled("button", {
+export const Button = styled("button", {
   backgroundColor: "$orange700",
   padding: "1rem 3.5rem",
   borderRadius: "8px",
@@ -14,6 +14,13 @@ export const ButtonContainer = styled("button", {
   fontWeight: 700,
   color: "$white",
   fontSize: "1.25rem",
+  variants:{
+    sizeButton:{
+      full:{
+        width:"100%"
+      }
+    }
+  },
   "@media (max-width:500px)": {
     padding: "1rem 0",
     width: "100%",

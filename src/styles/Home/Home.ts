@@ -8,6 +8,16 @@ export const Header = styled("header", {
   maxWidth: 1440,
   paddingTop: "2rem",
   margin: "auto",
+  a:{
+    border: "1px solid",
+    borderColor: "$gray600",
+    padding: "12px 24px",
+    borderRadius: 8,
+    textDecoration: "none",
+    color: "$white",
+    fontWeight: 700,
+    width: "fit-content",
+  },
   "@media (max-width:768px)": {
     width: "calc(100% - 4rem)",
   },
