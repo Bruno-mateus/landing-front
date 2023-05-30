@@ -13,6 +13,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import X from "../../assets/X.svg";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { apiConnect } from "@/lib/axios";
+import { AxiosError } from "axios";
 
 interface FormProps {
   setActiveForm: (value: boolean) => void;
@@ -41,13 +43,34 @@ export function Form({ setActiveForm }: FormProps) {
     resolver: zodResolver(formSchema),
   });
 
-  function handleFormValue(data: FormType) {
-    console.log(data);
+
+
+
+  async function handleRegister(data: FormType) {
+    try {
+      await apiConnect.post('users', {
+        name: data.name,
+        lastname: data.lastname,
+        email:data.email,
+        option:data.option,
+
+      })
+      
+    } catch (err) {
+      if (err instanceof AxiosError && err?.response?.data?.message) {
+        alert(err.response.data.message)
+        return
+      }
+      return console.error(err)
+    }
   }
+
+
+
 
   return (
     <Overlay>
-      <FormContainer onSubmit={handleSubmit(handleFormValue)}>
+      <FormContainer onSubmit={handleSubmit(handleRegister)}>
         <header>
           <button
             onClick={() => {
