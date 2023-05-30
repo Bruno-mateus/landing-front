@@ -169,3 +169,4 @@ export const Footer = styled("footer", {
     fontSize: "0.75rem",
   },
 });
+

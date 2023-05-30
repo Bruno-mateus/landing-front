@@ -63,25 +63,38 @@ export const InputGroup = styled("div", {
   gridTemplateColumns: "repeat(2, 1fr)",
   gap: "1.5rem",
   paddingBottom: "1.5rem",
+
   label: {
     display: "flex",
     flexDirection: "column",
     gap: ".5rem",
   },
-  input: {
-    width: "17.25rem",
-    height: "3rem",
-    padding: ".75rem 1rem",
-    borderRadius: 6,
-    border: "1px solid $gray100",
-    "&::placeholder": {
-      color: "$gray200",
-    },
-  },
+
   "@media (max-width:600px)": {
     gridTemplateColumns: "1fr",
     input: {
       width: "100%",
+    },
+  },
+});
+
+export const Input = styled("input", {
+  width: "17.25rem",
+  height: "3rem",
+  padding: ".75rem 1rem",
+  borderRadius: 6,
+
+  "&::placeholder": {
+    color: "$gray200",
+  },
+  variants: {
+    inputStyle: {
+      default: {
+        border: "1px solid $gray100",
+      },
+      error: {
+        border: "2px solid #db0202",
+      },
     },
   },
 });
@@ -118,4 +131,9 @@ export const RadioGroup = styled("div", {
     gridTemplateColumns: "1fr",
     gap: "1.25rem",
   },
+});
+
+export const FormError = styled("span", {
+  fontSize: ".75rem",
+  color: "#db0202",
 });
