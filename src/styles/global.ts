@@ -17,10 +17,13 @@ export const globalStyles = globalCss({
     fontFamily: "var(--font-red-hat-display)",
     color: "$gray600",
     scrollBehavior: "smooth",
-    
+
     height: "100%",
-    "@media (max-width:500px)": {
+    "@media (max-width:600px)": {
       fontSize: "0.875rem",
+    },
+    "@media (max-width:280px)": {
+      fontSize: "0.75rem",
     },
   },
 

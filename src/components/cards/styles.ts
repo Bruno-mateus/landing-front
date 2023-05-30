@@ -7,14 +7,19 @@ import { styled } from "@/styles";
 export const Container = styled("div", {
   height: "18.75rem",
   borderRadius: 12,
-  "@media (max-width:768px)": {
+  "@media (max-width:912px)": {
     borderRadius: 3.24,
-    height: "17rem",
+    height: "16.5rem",
+  },
+  "@media (max-width:600px)": {
+    borderRadius: 3.24,
+    height: "9rem",
   },
   "@media (max-width:500px)": {
     borderRadius: 3.24,
-    height: "80.92px",
+    height: "5.125rem",
   },
+
   variants: {
     backgrounds: {
       blue: {

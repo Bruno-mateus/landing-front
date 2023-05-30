@@ -14,16 +14,21 @@ export const Button = styled("button", {
   fontWeight: 700,
   color: "$white",
   fontSize: "1.25rem",
-  variants:{
-    sizeButton:{
-      full:{
-        width:"100%"
-      }
-    }
+  variants: {
+    sizeButton: {
+      full: {
+        width: "100%",
+      },
+    },
   },
-  "@media (max-width:500px)": {
+  "@media (max-width:600px)": {
     padding: "1rem 0",
     width: "100%",
     fontSize: "1rem",
+  },
+  "@media (max-width:280px)": {
+    padding: ".8rem 0",
+    width: "100%",
+    fontSize: ".8rem",
   },
 });
