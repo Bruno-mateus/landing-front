@@ -35,12 +35,12 @@ export const Container = styled("div", {
   paddingTop: "2.5rem",
   margin: "auto",
   width: "100%",
-  height:"100%"
+  
 });
 
 export const MainContent = styled("section", {
   display: "flex",
-  height:"100%",
+  
   flexDirection: "column",
   alignItems: "center",
   gap: "3.5rem",

@@ -66,6 +66,10 @@ export function Form({ setActiveForm,setSuccessSubmit }: FormProps) {
   async function handleFormValue(data: FormType) {
     console.log(data);
     setSuccessSubmit(true)
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
 
   const selectValue = watch("area")
