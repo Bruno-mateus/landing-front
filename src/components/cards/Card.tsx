@@ -82,36 +82,108 @@ export function Card({ color }: CardProps) {
       <Avatar backgrounds={color} id="slider">
         {color === "pink" ? (
           <>
-            <Image src={pink1} className="pink selected" alt="" />
-            <Image src={pink2} className="pink no-selected " alt="" />
-            <Image src={pink3} className="pink no-selected " alt="" />
+            <Image
+              src={pink1}
+              priority
+              quality={100}
+              className="pink selected"
+              alt=""
+            />
+            <Image
+              src={pink2}
+              priority
+              quality={100}
+              className="pink no-selected "
+              alt=""
+            />
+            <Image
+              src={pink3}
+              priority
+              quality={100}
+              className="pink no-selected "
+              alt=""
+            />
           </>
         ) : (
           ""
         )}
         {color === "blue" ? (
           <>
-            <Image src={blue1} className="blue selected" alt="" />
-            <Image src={blue2} className="blue no-selected" alt="" />
-            <Image src={blue3} className="blue no-selected" alt="" />
+            <Image
+              src={blue1}
+              priority
+              quality={100}
+              className="blue selected"
+              alt=""
+            />
+            <Image
+              src={blue2}
+              priority
+              quality={100}
+              className="blue no-selected"
+              alt=""
+            />
+            <Image
+              src={blue3}
+              priority
+              quality={100}
+              className="blue no-selected"
+              alt=""
+            />
           </>
         ) : (
           ""
         )}
         {color === "green" ? (
           <>
-            <Image src={green1} className="green" alt="" />
-            <Image src={green2} className="green no-selected" alt="" />
-            <Image src={green3} className="green no-selected" alt="" />
+            <Image
+              src={green1}
+              priority
+              quality={100}
+              className="green"
+              alt=""
+            />
+            <Image
+              src={green2}
+              priority
+              quality={100}
+              className="green no-selected"
+              alt=""
+            />
+            <Image
+              src={green3}
+              priority
+              quality={100}
+              className="green no-selected"
+              alt=""
+            />
           </>
         ) : (
           ""
         )}
         {color === "orange" ? (
           <>
-            <Image src={orange1} className="orange" alt="" />
-            <Image src={orange2} className="orange no-selected" alt="" />
-            <Image src={orange3} className="orange no-selected" alt="" />
+            <Image
+              src={orange1}
+              priority
+              quality={100}
+              className="orange"
+              alt=""
+            />
+            <Image
+              src={orange2}
+              priority
+              quality={100}
+              className="orange no-selected"
+              alt=""
+            />
+            <Image
+              src={orange3}
+              priority
+              quality={100}
+              className="orange no-selected"
+              alt=""
+            />
           </>
         ) : (
           ""

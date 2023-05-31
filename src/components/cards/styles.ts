@@ -8,7 +8,6 @@ export const Container = styled("div", {
   height: "18.75rem",
   borderRadius: 12,
   "@media (max-width:912px)": {
-    borderRadius: 3.24,
     height: "16.5rem",
   },
   "@media (max-width:600px)": {
@@ -52,6 +51,12 @@ export const Avatar = styled("div", {
     position: "absolute",
     bottom: 0,
     transition: " opacity 600ms",
+    "@media (max-width:600px)": {
+      borderRadius: 3.24,
+    },
+    "@media (max-width:500px)": {
+      borderRadius: 3.24,
+    },
   },
   variants: {
     backgrounds: {
