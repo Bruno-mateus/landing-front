@@ -1,0 +1,6 @@
+.selected{
+    opacity: 1 ;
+}
+.no-selected{
+    opacity: 0;
+}
