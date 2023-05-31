@@ -42,12 +42,13 @@ export default function Home() {
           <MainContent>
             <Success />
             
-            <Footer>
+            
+          </MainContent>
+          <Separator />
+          <Footer>
               <span>Ouss © 2023 - Todos os direitos reservados</span>
               <span>Política de privacidade</span>
             </Footer>
-          </MainContent>
-          <Separator />
         </Container>
       </>
     );
