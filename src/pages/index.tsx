@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head";
 import Image from "next/image";
 
 import logo from "../assets/logo.svg";
@@ -23,12 +23,37 @@ import { Card } from "@/components/cards/Card";
 
 import { Separator } from "@/components/Separator/Separator";
 import { HighLight } from "@/components/HighLight/HighLight";
-import { Form } from '@/components/Form/Form';
-import { useState } from 'react';
-import { Button } from '@/components/buttons/Button/Button';
+import { Form } from "@/components/Form/Form";
+import { useState } from "react";
+import { Button } from "@/components/buttons/Button/Button";
+import { Success } from "@/components/Success/Success";
 
 export default function Home() {
-  const [activeForm, setActiveForm]=useState(false)
+  const [activeForm, setActiveForm] = useState(false);
+  const [successSubmit, setSuccessSubmit] = useState(false);
+
+  if (successSubmit) {
+    return (
+      <>
+        <Header>
+          <Image src={logo} width={135} height={40} alt={"OUSS"} />
+        </Header>
+        <Container>
+          <MainContent>
+            <Success />
+            
+            
+          </MainContent>
+          <Separator />
+          <Footer>
+              <span>Ouss © 2023 - Todos os direitos reservados</span>
+              <span>Política de privacidade</span>
+            </Footer>
+        </Container>
+      </>
+    );
+  }
+
   return (
     <>
       <Head>
@@ -37,15 +62,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {
-        activeForm?<Form setActiveForm={setActiveForm}/>:""
-      }
-      
+      {activeForm ? (
+        <Form
+          setActiveForm={setActiveForm}
+          setSuccessSubmit={setSuccessSubmit}
+        />
+      ) : (
+        ""
+      )}
+
       <Header>
         <Image src={logo} width={135} height={40} alt={"OUSS"} />
-        <a href="#about" >
-          O que é a OUSS ?
-        </a>
+        <a href="#about">O que é a OUSS ?</a>
       </Header>
       <Container>
         <MainContent>
@@ -70,7 +98,9 @@ export default function Home() {
             <Card color="green" />
             <Card color="orange" />
           </ContainerCards>
-          <Button type="button" onClick={()=>setActiveForm(true)}>Entrar na lista de espera</Button>
+          <Button type="button" onClick={() => setActiveForm(true)}>
+            Entrar na lista de espera
+          </Button>
         </MainContent>
         <Separator />
         <AboutContainer id="about">

@@ -20,15 +20,17 @@ export const FormContainer = styled("form", {
   borderRadius: 12,
   backgroundColor: "$white",
   position: "relative",
+  "button ":{
+  marginTop:"2rem"
+},
   header: {
     width: "100%",
-
     background: "red",
     button: {
       background: "transparent",
       border: "none",
       cursor: "pointer",
-      top: 12,
+      top: -12,
       right: 12,
       position: "absolute",
     },
@@ -137,3 +139,54 @@ export const FormError = styled("span", {
   fontSize: ".75rem",
   color: "#db0202",
 });
+
+export const SelectArea= styled('div',{
+  width:"100%",
+  height: "3rem",
+
+})
+
+export const SelectContainer=styled('div',{
+  
+    width:"100%",
+    height: "100%",
+    padding: ".5rem 1rem",
+    borderRadius: 6,
+    variants: {
+      selectStyle: {
+        default: {
+          border: "1px solid $gray100",
+        },
+        error: {
+          border: "2px solid #db0202",
+        },
+      },
+    },
+
+})
+
+export const Select= styled('select',{
+  width: "100%",
+  border:"none",
+  height:"100%",
+  outline:"none",
+
+  "option:disabled":{
+    color:"$gray200"
+  },
+  option:{
+    color:"$gray950"
+  },
+
+  variants:{
+    hasValue:{
+      true:{
+        color:"$gray950"
+      },
+      false:{
+        color:"$gray200"
+      }
+    }
+  }
+  
+})
