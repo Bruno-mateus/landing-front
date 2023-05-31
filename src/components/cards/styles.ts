@@ -47,6 +47,7 @@ export const Avatar = styled("div", {
   justifyContent: "center",
   img: {
     objectFit: "cover",
+    borderRadius: 12,
     maxHeight: "100%",
     maxWidth: "100%",
     position: "absolute",

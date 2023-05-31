@@ -6,7 +6,11 @@ export const Button = styled("button", {
   borderRadius: "8px",
   transition: "ease-in-out 200ms ",
   cursor: "pointer",
-  "&:hover": {
+  "&:disabled":{
+    background:"$gray300",
+    cursor:"not-allowed"
+  },
+  "&::not(disabled):hover": {
     background: "$orange300",
     "box-shadow": "0px 0px 50px rgba(245, 86, 43, 0.37)",
   },

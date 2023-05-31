@@ -21,6 +21,9 @@ export const HighLightContainer = styled("div", {
             fontSize: "1.75rem",
             lineHeight: "2.25rem",
           },
+          h2:{
+            fontSize:"2.5rem"
+          },
           span: {
             display: "inline-flex",
             flexDirection: "column",
@@ -31,6 +34,9 @@ export const HighLightContainer = styled("div", {
               borderRadius: "8px",
               "@media (max-width:600px)": {
                 display: "none",
+                p:{
+                  fontSize:".875rem"
+                }
               },
             },
           },
