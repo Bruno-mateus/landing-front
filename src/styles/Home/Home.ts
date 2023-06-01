@@ -17,6 +17,9 @@ export const Header = styled("header", {
     color: "$white",
     fontWeight: 700,
     width: "fit-content",
+    display: "flex",
+    alignItems: "center",
+    gap: "1rem",
   },
   "@media (max-width:912px)": {
     width: "calc(100% - 4rem)",

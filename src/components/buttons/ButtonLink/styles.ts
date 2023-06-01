@@ -10,4 +10,7 @@ export const ButtonLinkContainer = styled(Link, {
   color: "$white",
   fontWeight: 700,
   width: "fit-content",
+  display: "flex",
+  alignItems: "center",
+  gap: "1rem",
 });

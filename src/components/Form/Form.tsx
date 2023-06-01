@@ -90,33 +90,38 @@ export function Form({ setActiveForm,setSuccessSubmit }: FormProps) {
         </header>
         <h3>Entrar na lista de espera</h3>
         <InputGroup>
-          <label>
-            <strong>Nome</strong>
-            <Input
-              type="text"
-              {...register("name")}
-              placeholder="Seu nome aqui"
-              inputStyle={errors.name ? "error" : "default"}
-            />
-            {errors.name ? <FormError>{errors.name.message}</FormError> : ""}
-          </label>
-          <label>
-            <strong>Sobrenome</strong>
-            <Input
-              type="text"
-              {...register("lastname")}
-              placeholder="Seu sobrenome aqui"
-              inputStyle={errors.lastname ? "error" : "default"}
-            />
-            {errors.lastname ? (
-              <FormError>{errors.lastname.message}</FormError>
-            ) : (
-              ""
-            )}
-          </label>
+          <div>
+            <label>
+              <strong>Nome</strong>
+              <Input
+                id="name"
+                type="text"
+                {...register("name")}
+                placeholder="Seu nome aqui"
+                inputStyle={errors.name ? "error" : "default"}
+              />
+              {errors.name ? <FormError>{errors.name.message}</FormError> : ""}
+            </label>
+            <label>
+              <strong>Sobrenome</strong>
+              <Input
+                id="lastname"
+                type="text"
+                {...register("lastname")}
+                placeholder="Seu sobrenome aqui"
+                inputStyle={errors.lastname ? "error" : "default"}
+              />
+              {errors.lastname ? (
+                <FormError>{errors.lastname.message}</FormError>
+              ) : (
+                ""
+              )}
+            </label>
+          </div>
           <label>
             <strong>E-mail</strong>
             <Input
+              id="email"
               type="email"
               {...register("email")}
               placeholder="Seu e-mail aqui"
@@ -138,9 +143,16 @@ export function Form({ setActiveForm,setSuccessSubmit }: FormProps) {
           {errors.option ? <FormError>Selecione um perfil</FormError> : ""}
         </RadioGroup>
         <SelectArea>
+          <strong>Selecione a sua área de atuação</strong>
           <SelectContainer selectStyle={errors.area ? "error" : "default"}>
-            <Select {...register("area")} defaultValue={"selecione"}  hasValue={selectValue?"true":"false"}>
-              <option value="selecione" disabled >Selecione</option>
+            <Select
+              {...register("area")}
+              defaultValue={"selecione"}
+              hasValue={selectValue ? "true" : "false"}
+            >
+              <option value="selecione" disabled>
+                Selecione
+              </option>
               <option value="Gestão de produtos">Gestão de produtos</option>
               <option value="Jurídico">Jurídico</option>
               <option value="Operações">Operações</option>
@@ -159,7 +171,9 @@ export function Form({ setActiveForm,setSuccessSubmit }: FormProps) {
               <option value="Outro">Outro</option>
             </Select>
           </SelectContainer>
-          <FormError>{errors.area?"Selecione uma área de atuação":""}</FormError>
+          <FormError>
+            {errors.area ? "Selecione uma área de atuação" : ""}
+          </FormError>
         </SelectArea>
 
         <Button type="submit" disabled={isSubmitting} sizeButton="full">
@@ -168,7 +182,7 @@ export function Form({ setActiveForm,setSuccessSubmit }: FormProps) {
         <p>
           <small>
             Depois de enviar seus dados, você declara estar ciente da política
-            de privacidade e autoriza a Ouss a entrar em contato pra participar
+            de privacidade e autoriza a ZOÜS a entrar em contato pra participar
             de pesquisas e testes de usabilidade que vão ajudar no crescimento
             da plataforma.
           </small>

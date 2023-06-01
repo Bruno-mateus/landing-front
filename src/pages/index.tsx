@@ -5,6 +5,7 @@ import logo from "../assets/logo.svg";
 import usersIcon from "../assets/users-icon.svg";
 import heartIcon from "../assets/heart-icon.svg";
 import messageIcon from "../assets/message-icon.svg";
+import linkedin from "../assets/linkedin.svg";
 
 import {
   AboutContainer,
@@ -36,19 +37,17 @@ export default function Home() {
     return (
       <>
         <Header>
-          <Image src={logo} width={135} height={40} alt={"OUSS"} />
+          <Image src={logo} width={135} height={40} alt={"ZOÜS"} />
         </Header>
         <Container>
           <MainContent>
             <Success />
-            
-            
           </MainContent>
           <Separator />
           <Footer>
-              <span>Ouss © 2023 - Todos os direitos reservados</span>
-              <span>Política de privacidade</span>
-            </Footer>
+            <span>ZOÜS © 2023 - Todos os direitos reservados</span>
+            <span>Política de privacidade</span>
+          </Footer>
         </Container>
       </>
     );
@@ -72,8 +71,8 @@ export default function Home() {
       )}
 
       <Header>
-        <Image src={logo} width={135} height={40} alt={"OUSS"} />
-        <a href="#about">O que é a OUSS ?</a>
+        <Image src={logo} width={135} height={40} alt={"ZOÜS"} />
+        <a href="#about">O que é a ZOÜS ?</a>
       </Header>
       <Container>
         <MainContent>
@@ -105,7 +104,7 @@ export default function Home() {
         <Separator />
         <AboutContainer id="about">
           <HighLight size="medium">
-            <h2>Conheça a OUSS</h2>
+            <h2>Conheça a ZOÜS</h2>
             <p>
               A plataforma feita por quem também já cansou de entrar em
               processos seletivos e não dar em nada.
@@ -154,16 +153,17 @@ export default function Home() {
           <SocialBox>
             <p>Fica de olho no nosso LinkedIn pra acompanhar as novidades</p>
             <ButtonLink
-              href="https://www.linkedin.com/company/ousscompany"
+              href="https://www.linkedin.com/company/ZOÜScompany"
               target="_blank"
             >
-              Seguir a Ouss
+              <Image src={linkedin} alt="linkedin" />
+              Seguir a ZOÜS
             </ButtonLink>
           </SocialBox>
         </AboutContainer>
         <Separator />
         <Footer>
-          <span>Ouss © 2023 - Todos os direitos reservados</span>
+          <span>ZOÜS © 2023 - Todos os direitos reservados</span>
           <span>Política de privacidade</span>
         </Footer>
       </Container>

@@ -20,9 +20,9 @@ export const FormContainer = styled("form", {
   borderRadius: 12,
   backgroundColor: "$white",
   position: "relative",
-  "button ":{
-  marginTop:"2rem"
-},
+  "button ": {
+    marginTop: "4rem",
+  },
   header: {
     width: "100%",
     background: "red",
@@ -30,8 +30,8 @@ export const FormContainer = styled("form", {
       background: "transparent",
       border: "none",
       cursor: "pointer",
-      top: -12,
-      right: 12,
+      top: -45,
+      right: 20,
       position: "absolute",
     },
   },
@@ -44,6 +44,7 @@ export const FormContainer = styled("form", {
   },
   h3: {
     color: "$gray950",
+    fontSize: "1.5rem",
   },
   strong: {
     fontSize: "0.875rem",
@@ -60,12 +61,24 @@ export const FormContainer = styled("form", {
 });
 
 export const InputGroup = styled("div", {
-  display: "grid",
+  display: "flex",
   marginTop: "2rem",
-  gridTemplateColumns: "repeat(2, 1fr)",
   gap: "1.5rem",
+  flexDirection: "column",
   paddingBottom: "1.5rem",
-
+  div: {
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    gap: "1.5rem",
+    "@media (max-width:600px)": {
+      display: "grid",
+      gridTemplateColumns: "1fr",
+      input: {
+        width: "100%",
+      },
+    },
+  },
   label: {
     display: "flex",
     flexDirection: "column",
@@ -73,6 +86,7 @@ export const InputGroup = styled("div", {
   },
 
   "@media (max-width:600px)": {
+    display: "grid",
     gridTemplateColumns: "1fr",
     input: {
       width: "100%",
@@ -81,14 +95,16 @@ export const InputGroup = styled("div", {
 });
 
 export const Input = styled("input", {
-  width: "17.25rem",
   height: "3rem",
   padding: ".75rem 1rem",
   borderRadius: 6,
-
+  minWidth: "17.5rem",
+  width: "100%",
+  fontSize: "1rem",
   "&::placeholder": {
     color: "$gray200",
   },
+
   variants: {
     inputStyle: {
       default: {
@@ -140,30 +156,28 @@ export const FormError = styled("span", {
   color: "#db0202",
 });
 
-export const SelectArea= styled('div',{
-  width:"100%",
+export const SelectArea = styled("div", {
+  width: "100%",
   height: "3rem",
+});
 
-})
-
-export const SelectContainer=styled('div',{
-  
-    width:"100%",
-    height: "100%",
-    padding: ".5rem 1rem",
-    borderRadius: 6,
-    variants: {
-      selectStyle: {
-        default: {
-          border: "1px solid $gray100",
-        },
-        error: {
-          border: "2px solid #db0202",
-        },
+export const SelectContainer = styled("div", {
+  marginTop: "8px",
+  width: "100%",
+  height: "100%",
+  padding: ".5rem 1rem",
+  borderRadius: 6,
+  variants: {
+    selectStyle: {
+      default: {
+        border: "1px solid $gray100",
+      },
+      error: {
+        border: "2px solid #db0202",
       },
     },
-
-})
+  },
+});
 
 export const Select= styled('select',{
   width: "100%",
