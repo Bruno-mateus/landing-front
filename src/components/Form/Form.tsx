@@ -16,13 +16,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import X from "../../assets/X.svg";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { apiConnect } from "@/lib/axios";
+import { AxiosError } from "axios";
 
 interface FormProps {
   setActiveForm: (value: boolean) => void;
   setSuccessSubmit: (value: boolean) => void;
 }
 
-export function Form({ setActiveForm,setSuccessSubmit }: FormProps) {
+export function Form({ setActiveForm, setSuccessSubmit }: FormProps) {
   const formSchema = z.object({
     name: z
       .string()
@@ -58,27 +60,40 @@ export function Form({ setActiveForm,setSuccessSubmit }: FormProps) {
     handleSubmit,
     reset,
     watch,
-    formState: { isSubmitting, errors,isSubmitSuccessful },
+    formState: { isSubmitting, errors, isSubmitSuccessful },
   } = useForm<FormType>({
     resolver: zodResolver(formSchema),
   });
 
-  async function handleFormValue(data: FormType) {
-    console.log(data);
-    setSuccessSubmit(true)
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+  async function handleRegister(data: FormType) {
+    try {
+      await apiConnect.post("users", {
+        nome: data.name,
+        sobrenome: data.lastname,
+        email: data.email,
+        option: data.option,
+        area: data.area,
+      });
+
+      setSuccessSubmit(isSubmitSuccessful);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } catch (err) {
+      if (err instanceof AxiosError && err?.response?.data?.message) {
+        alert(err.response.data.message);
+        return;
+      }
+      return console.error(err);
+    }
   }
 
-  const selectValue = watch("area")
-
-
+  const selectValue = watch("area");
 
   return (
     <Overlay>
-      <FormContainer onSubmit={handleSubmit(handleFormValue)}>
+      <FormContainer onSubmit={handleSubmit(handleRegister)}>
         <header>
           <button
             onClick={() => {
